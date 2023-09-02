@@ -1,5 +1,8 @@
 package rewards.internal;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import rewards.AccountContribution;
 import rewards.Dining;
 import rewards.RewardConfirmation;
@@ -30,7 +33,7 @@ import common.money.MonetaryAmount;
  * - Inject all 3 dependencies.  Decide if you should use field
  *   injection or constructor injection.
  */
-
+@Service
 public class RewardNetworkImpl implements RewardNetwork {
 
 	private AccountRepository accountRepository;
