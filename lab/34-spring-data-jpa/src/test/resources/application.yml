@@ -14,3 +14,21 @@
 #   -   Run RewardNetworkTests. Verify it succeeds.
 #       (If you are using Gradle, comment out test exclude
 #        statement from the build.gradle before running the test.)
+
+spring:
+  output:
+    ansi:
+      enabled: ALWAYS
+  sql:
+    init:
+      schema-locations:
+        - classpath:rewards/testdb/test-schema.sql
+      data-locations:
+        - classpath:rewards/testdb/test-data.sql
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    hibernate:
+      ddl-auto: none
