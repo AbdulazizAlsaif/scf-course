@@ -1,0 +1,13 @@
+logging:
+  level:
+    root: error
+spring:
+  output:
+    ansi:
+      enabled: ALWAYS
+  sql:
+    init:
+      schema-locations: schema.sql
+      data-locations:
+        - data.sql
+
