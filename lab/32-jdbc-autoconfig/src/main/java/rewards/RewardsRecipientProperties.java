@@ -19,6 +19,59 @@ package rewards;
 //   (3) Annotate this class with @Component
 // - Implement a new command line runner that displays the name of the rewards
 //   recipient when the application gets started
+
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.stereotype.Component;
+
+@Component
+@ConfigurationProperties(prefix = "rewards.recipient")
 public class RewardsRecipientProperties {
 
+    String name;
+    int age;
+    String gender;
+    String hobby;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getHobby() {
+        return hobby;
+    }
+
+    public void setHobby(String hobby) {
+        this.hobby = hobby;
+    }
+
+
+    @Override
+    public String toString() {
+        return "RewardsRecipientProperties{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", gender='" + gender + '\'' +
+                ", hobby='" + hobby + '\'' +
+                '}';
+    }
 }
