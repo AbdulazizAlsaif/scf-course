@@ -61,14 +61,11 @@ public class RewardNetworkPropagationTests {
 	public void testPropagation() {
 		// Open a transaction for testing
 		TransactionStatus status = transactionManager.getTransaction(new DefaultTransactionDefinition());
-
 		// Run the test - generate a reward
 		Dining dining = Dining.createDining("100.00", "1234123412341234", "1234567890");
 		rewardNetwork.rewardAccountFor(dining);
-
 		// Rollback the transaction started by this test
 		transactionManager.rollback(status);
-
 		// Assert that a Reward has been saved to the database - for this to be true
 		// the RewardNetwork must run and commit its OWN transaction
 		String sql = "select SAVINGS from T_ACCOUNT_BENEFICIARY where NAME = ?";
